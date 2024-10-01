@@ -30,4 +30,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
             name: myapp
-            run: /my_published_app
+            run: my_published_app/
