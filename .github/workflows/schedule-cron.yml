@@ -1,0 +1,13 @@
+name: cron
+
+on: 
+  schedule:
+  - cron: "0 * * * *"
+
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Echo Hello Yousef
+        run: echo "Hello Yousef"
