@@ -25,3 +25,9 @@ jobs:
 
       - name: publish
         run: dotnet publish src/GitHubActionsDotNet.Api/GitHubActionsDotNet.Api.csproj -c Release -o my_published_app
+
+      - name: Deploy
+        uses: actions/upload-artifact@v4
+        with:
+            name: myapp
+            run: /my_published_app
