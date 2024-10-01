@@ -17,17 +17,14 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
-      - name: Restore dependencies
-        run: dotnet restore
 
-      - name: Test
-        run: dotnet test --verbosity normal
+      - name: Format code
+        run: dotnet format --check 
 
       - name: publish
-        run: dotnet publish src/GitHubActionsDotNet.Api/GitHubActionsDotNet.Api.csproj -c Release -o my_published_app
+        run: dotnet publish src/GitHubActionsDotNet.Api/GitHubActionsDotNet.Api.csproj -c Release -o my_published_app/
 
-      - name: Deploy
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
             name: myapp
             run: my_published_app/
